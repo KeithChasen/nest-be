@@ -18,4 +18,10 @@ export class TaskService {
     }
     return task;
   }
+
+  create(title: string) {
+    const task = { id: this.tasks.length + 1, title, isCompleted: false };
+    this.tasks.push(task);
+    return task;
+  }
 }
