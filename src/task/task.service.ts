@@ -39,4 +39,10 @@ export class TaskService {
     task.isCompleted = isCompleted ?? task.isCompleted;
     return task;
   }
+
+  delete(id: number) {
+    const task = this.findById(id);
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+    return task;
+  }
 }
